@@ -34,7 +34,7 @@ function addFileExtensions(files) {
       }
       const updatedData = data.replaceAll(
         // this regex matches on import('path/to/foo') and import foo from 'path/to/foo'
-        /(import\s+{?[^}]*?}?\s+from\s+['"])([^.'"]+)(['"]\s*;)|(import\s*\([\s\S]*?['"])([^'"]+[^/])(['"]\s*[\s\S]*?\)\s*)/g,
+        /(import\s+{?[^}]*?}?\s+from\s+['"])([^'"]+)(['"]\s*;)|(import\s*\([\s\S]*?['"])([^'"]+[^/])(['"]\s*[\s\S]*?\)\s*)/g,
         (match, p1, p2, p3, p4, p5, p6) => {
           //depending on which regex pattern is matched, it will populate groups 1-3 or 4-6
           const g1 = p1 || p4;
